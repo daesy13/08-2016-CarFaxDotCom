@@ -79,4 +79,58 @@ var averageAgeCalculator = function(array){
 
 // console.log(averageAgeCalculator(ageList));
 
-//5.
+//5. filterByColor
+var filterByColor = function(array, color){
+	var colorList = [];
+	toolbelt.loop(array, function(car){
+		if(car.color === color){
+			colorList.push(car);
+		}
+	});
+	return colorList;
+}
+//console.log(filterByColor(carData, 'blue'));
+
+//6. Year Filters
+var filterAboveYear = function(array, year){
+	var aboveYearList = [];
+	toolbelt.loop(array, function(car){
+		if(car.year > year){
+			aboveYearList.push(car);
+		}
+	});
+	return aboveYearList;
+}
+
+//console.log(filterAboveYear(carData, 2000));
+
+var filterBelowYear = function(array, year){
+	var belowYearList = [];
+	toolbelt.loop(array, function(car){
+		if(car.year < year){
+			belowYearList.push(car);
+		}
+	});
+	return belowYearList;
+}
+
+//console.log(filterBelowYear(carData, 1999));
+
+//7. filterBy
+var filterBy = function(collection, predicate){
+	var results = [];
+	toolbelt.loop(array, function(car){
+		if ()
+	})
+}
+
+
+
+
+
+
+
+
+
+
+
