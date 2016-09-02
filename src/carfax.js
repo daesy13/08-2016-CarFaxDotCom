@@ -119,22 +119,47 @@ var filterBelowYear = function(array, year){
 //console.log(filterBelowYear(carData, 1999));
 
 //7. filterBy
-// var filter = function(){
-// 	loop()
-// }
 
-// var filterBy = function(collection, callback){
-// 	var results = [];
-// 	toolbelt.loop(collection, function(element){
-// 		if(){
+var filterBy = function(collection, callback){
+	var results = [];
+	toolbelt.loop(collection, function(car){
+		if(callback(car)){
+			results.push(car);
+		}
+		});
+	return results;
+};
 
-// 		}
+// console.log(filterBy(carData,function(car){
+// 	return (car.color === 'blue')
+// }));
 
-// 		})
-// 	return results;
-// };
+//7.A Filter Above Year
 
-// console.log
+var filterAboveYear = function(collection, year){
+	filterBy(collection ,function(car){
+	return (car.year > year)
+});
+
+}
+console.log(filterAboveYear(carData, 1999));
+
+//7.B Filter Below Year
+
+console.log(filterBy(carData,function(car){
+	return (car.year < 1999)
+}));
+
+//7.A Filter Between Years
+
+console.log(filterBy(carData,function(car){
+	return (car.year > 1995 && car.year < 2005)
+}));
+
+
+
+
+
 
 
 //8. pricingData
