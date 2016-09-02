@@ -79,6 +79,7 @@ var averageAgeCalculator = function(array){
 
 // console.log(averageAgeCalculator(ageList));
 
+
 //5. filterByColor
 var filterByColor = function(array, color){
 	var colorList = [];
@@ -90,6 +91,7 @@ var filterByColor = function(array, color){
 	return colorList;
 }
 //console.log(filterByColor(carData, 'blue'));
+
 
 //6. Year Filters
 var filterAboveYear = function(array, year){
@@ -117,20 +119,69 @@ var filterBelowYear = function(array, year){
 //console.log(filterBelowYear(carData, 1999));
 
 //7. filterBy
-var filterBy = function(collection, predicate){
-	var results = [];
+// var filter = function(){
+// 	loop()
+// }
+
+// var filterBy = function(collection, callback){
+// 	var results = [];
+// 	toolbelt.loop(collection, function(element){
+// 		if(){
+
+// 		}
+
+// 		})
+// 	return results;
+// };
+
+// console.log
+
+
+//8. pricingData
+var carPrices = function(array){
+	var carPriceList = [];
 	toolbelt.loop(array, function(car){
-		if ()
+		carPriceList.push(car.price)
 	})
-}
+	return carPriceList;
+};
 
+var carPriceArr = carPrices(carData);
 
+// console.log(carPrices(carData));
 
+var pricingData = function(array){
+	var totalPrice = 0;
+	toolbelt.loop(array, function(price){
+		totalPrice += price;		
+	})
+	return totalPrice / array.length;
+};
 
+console.log(pricingData(carPriceArr));
 
+var mostExpensiveCar = function(array){
+	var mostExpensive = array[0];
+	toolbelt.loop(array, function(price){
+		if(price > mostExpensive){
+			mostExpensive = price;
+		}
+	})
+	return mostExpensive
+};
 
+console.log(mostExpensiveCar(carPriceArr));
 
+var leastExpensiveCar = function(array){
+	var leastExpensive = array[0];
+	toolbelt.loop(array, function(price){
+		if(price < leastExpensive){
+			leastExpensive = price;
+		}
+	})
+	return leastExpensive
+};
 
-
+console.log(leastExpensiveCar(carPriceArr));
 
 
